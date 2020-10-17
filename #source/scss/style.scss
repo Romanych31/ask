@@ -1,0 +1,128 @@
+@import "nullstyle";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import "./fonts_awesome/regular";
+@import "./fonts_awesome/fontawesome";
+@import "./fonts_awesome/solid";
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+   max-width: 100%;
+}
+.container {
+   max-width: 1130px;
+   margin: 0 auto;
+   padding: 50px 10px;
+}
+
+.btn {
+   width: 100px;
+   height: 40px;
+   border: 1px solid #00a2ff;
+   border-radius: 20px;
+   background-color: #fff;
+   font-size: 16px;
+   color: #00a2ff;
+   transition: background-color 0.3s ease;
+   &:hover {
+      background-color: #00a2ff;
+      color: #fff;
+   }
+}
+
+.content {
+   width: 100%;
+   height: 1vh;
+   &__title {
+      font-size: 40px;
+      margin-bottom: 50px;
+      color: #7e7e7e;
+   }
+
+   &__body {
+   }
+}
+.ask {
+   position: relative;
+   border: 1px solid rgb(223, 223, 223);
+   width: 100%;
+   height: 300px;
+   border-radius: 3px;
+   -webkit-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.24);
+   -moz-box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.24);
+   box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.24);
+   &__block {
+      position: absolute;
+      top: 0;
+      left: 80px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+   }
+   &__question {
+      display: block;
+      position: relative;
+      padding: 40px 0;
+      & p {
+         font-size: 26px;
+         line-height: 2;
+         font-weight: normal;
+         & span {
+            text-transform: uppercase;
+            color: #00a2ff;
+            font-weight: 600;
+         }
+         &::before {
+            content: attr(data-num);
+            position: absolute;
+            top: 15px;
+            left: -50px;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: #00a2ff;
+         }
+      }
+      &_sucsses p {
+         @extend %fa-icon;
+         @extend .fas;
+         font-family: Arial, Helvetica, sans-serif;
+         &::before {
+            font-family: "Font Awesome 5 Free";
+            content: fa-content($fa-var-check);
+            font-size: 35px;
+            color: #00a2ff;
+            top: 27px;
+         }
+      }
+   }
+
+   &__yes {
+      margin-right: 50px;
+   }
+
+   &__no {
+   }
+
+   &__start,
+   &__previous {
+      display: block;
+      margin: 50px 0 0 15px;
+      font-size: 16px;
+      color: rgba(112, 178, 216, 0.788);
+      background-color: transparent;
+      margin-bottom: 50px;
+      &:hover {
+         color: #00a2ff;
+      }
+   }
+}
+
+._show {
+   opacity: 1;
+   visibility: visible;
+   transition: opacity 0.3s ease;
+}
