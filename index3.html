@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="container">
+         <div class="content">
+
+            <h1 class="content__title">Choose your engagement model</h1>
+            <!-- ===========================ASK================================================================= -->
+            <div class="content__body ask">
+               <!-- ===========================QUESTION BLOCK================================================================= -->
+               <div class="ask__question-block show" id="Q">
+
+                  <div class="ask_question">
+                     <div class="ask__item q-0 show" id="0">
+                        <p data-num="1">Is your project duration over 6 month?</p>
+                     </div>
+                     <div class="ask__item q-01" id="1">
+                        <p data-num="2">Is this a fulltime project?</p>
+                     </div>
+                     <div class="ask__item q-00" id="2">
+                        <p data-num="2">Is your project duration is under 2 monthes?</p>
+                     </div>
+                     <div class="ask__item q-0" id="3">
+                        <p data-num="3">Do you need technical support and minor updates?</p>
+                     </div>
+                     <div class="ask__item" id="4">
+                        <p data-num="3">Do you have specification?</p>
+                     </div>
+                     <div class="ask__item" id="5">
+                        <p data-num="4">Are there changes to be expected?</p>
+                     </div>
+                  </div>
+                  <div class="ask__button button">
+                     <button class="button__yes btn">Yes</button>
+                     <button class="button__no btn">No</button>
+                     <button class="button__previous">Previous</button>
+                  </div>
+               </div>
+
+               <div class="ask__results-block" id="R">
+                  <div class="ask__results">
+                     <div id="111" class="ask__question ask__question_sucsses">
+                        <p>The best engagement model for you is
+                           <span>dedicated team</span></p>
+                     </div>
+                     <div id="00" class="ask__question ask__question_sucsses">
+                        <p>The best engagement model for you is
+                           <span>support package</span></p>
+                     </div>
+                     <div class="ask__question ask__question_sucsses">
+                        <p>The best engagement model for you is
+                           <span>time materials</span></p>
+                     </div>
+                     <div class="ask__question ask__question_sucsses">
+                        <p>The best engagement model for you is
+                           <span>fixed price</span></p>
+                     </div>
+                  </div>
+
+                  <div class="ask__button button">
+                     <button class="button__start">Start again</button>
+                  </div>
+               </div>
+
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <script src="/js/index.js"></script>
+</body>
+
+</html>
