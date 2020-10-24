@@ -1,124 +1,74 @@
 "use strict";
 
 const main = document.querySelector(".question__main");
+const btnYes = document.querySelectorAll(".button__yes");
+const btnNo = document.querySelectorAll(".button__no");
+const btnPre = document.querySelectorAll(".button__previous");
+const btnStart = document.querySelectorAll(".button__start");
 const qYes = document.querySelectorAll(".question__yes");
 const qNo = document.querySelectorAll(".question__no");
-console.log(qYes[]);
+let j = 1;
+// start();
+for (let i = 0; i < btnYes.length; i++) {
+   btnYes[i].addEventListener("click", Yes);
+}
+for (let i = 0; i < btnNo.length; i++) {
+   btnNo[i].addEventListener("click", No);
+}
+for (let i = 0; i < btnPre.length; i++) {
+   btnPre[i].addEventListener("click", previous);
+}
+for (let i = 0; i < btnStart.length; i++) {
+   btnStart[i].addEventListener("click", start);
+}
+
+function Yes() {
+   let show = document.querySelector(".show");
+   let Yes = searchChild(qYes);
+   show.classList.remove("show");
+   Yes.classList.add("show");
+   ++j;
+   count(j);
+}
+function No() {
+   let show = document.querySelector(".show");
+   let No = searchChild(qNo);
+   show.classList.remove("show");
+   No.classList.add("show");
+   ++j;
+   count(j);
+}
+function previous() {
+   let show = document.querySelector(".show");
+   show.parentNode.parentNode.classList.add("show");
+   show.classList.remove("show")
+   --j;
+   count(j);
+}
+function start() {
+   let show = document.querySelector(".show");
+   show.classList.remove("show");
+   main.classList.add("show");
+   j = 1;
+   count(j);
+}
+function searchChild(child) {
+   for (let i = 0; i < child.length; i++) {
+      if (child[i].parentNode.parentNode.matches(".show")) {
+         return child[i];
+      }
+   }
+}
+function count(i) {
+   let show = document.querySelector(".show");
+   let text = show.querySelector(".question__text");
+   if (text.hasAttribute("data-num")) {
+      text.setAttribute("data-num", i);
+   }
+}
 
 
-// function Start() {
-//    let show = document.querySelector("._show");
-//    if (show) {
-//       show.classList.remove("_show");
-//    }
-//    main.classList.add("_show");
-//    btnYes();
-//    btnNo();
-// }
-// Start();
 
-// function btnYes() {
-//    let show = document.querySelector("._show");
-//    let btnYes;
-//    btnYes = show.querySelector(".ask__yes");
-//    btnYes.onclick = Yes;
-// }
-
-// function btnNo() {
-//    let show = document.querySelector("._show");
-//    let btnNo;
-//    btnNo = show.querySelector(".ask__no");
-//    btnNo.onclick = No;
-// }
-
-// function btnPrevious() {
-//    let show = document.querySelector("._show");
-//    let btnPrevious;
-//    btnPrevious = show.querySelector(".ask__previous");
-//    btnPrevious.onclick = Previous;
-// }
-
-// function btnStart() {
-//    let show = document.querySelector("._show");
-//    let btnStart;
-//    btnStart = show.querySelector(".ask__start");
-//    btnStart.onclick = Start;
-// }
-
-// function Yes() {
-//    let show = document.querySelector("._show");
-//    show.classList.remove("_show");
-//    if (show == main) {
-//       fulltime.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious()
-//    } else if (show == fulltime) {
-//       dedicatedTeam.classList.add("_show");
-//       btnStart();
-//    } else if (show == technicalSupport) {
-//       suportPackage.classList.add("_show");
-//       btnStart();
-//    } else if (show == projectDuration) {
-//       specification.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious()
-//    } else if (show == specification) {
-//       changeAxpected.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious()
-//    } else if (show == changeAxpected) {
-//       timeMaterial.classList.add("_show");
-//       btnStart();
-//    }
-// }
-
-// function No() {
-//    let show = document.querySelector("._show");
-//    show.classList.remove("_show");
-//    if (show == main) {
-//       projectDuration.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious()
-//    } else if (show == fulltime) {
-//       technicalSupport.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious()
-//    } else if (show == technicalSupport || show == projectDuration || show == specification) {
-//       timeMaterial.classList.add("_show");
-//       btnStart();
-//    } else if (show == changeAxpected) {
-//       fixedPrice.classList.add("_show");
-//       btnStart();
-//    }
-// }
-
-// function Previous() {
-//    let show = document.querySelector("._show");
-//    show.classList.remove("_show");
-//    if (show == fulltime || show == projectDuration) {
-//       Start();
-//    } else if (show == technicalSupport) {
-//       fulltime.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious();
-//    } else if (show == specification) {
-//       projectDuration.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious();
-//    } else if (show == changeAxpected) {
-//       specification.classList.add("_show");
-//       btnYes();
-//       btnNo();
-//       btnPrevious();
-//    }
-// }
 
 
 
